@@ -3,8 +3,6 @@
 # Find all excel workbooks,
 # Return a new csv file with each row being a sum of
 # all values in that row of all sheets of all workbooks
-#
-# AriaRay Brown 11-21-19
 
 import pandas as pd
 from pandas import ExcelWriter
@@ -26,7 +24,7 @@ def find_workbooks(fdir_path):
 
 	# Check whether each item is a workbook or directory
 	for f in filelist:
-		
+
 		# Convert file name to lowercase
 		fname = f.lower()
 		
@@ -43,37 +41,53 @@ def find_workbooks(fdir_path):
 			find_workbooks(fpath) # now looking through subdirectory
 
 
+# Find the sum of all rows in a single Excel sheet (Excel dataframe).
+# Returns a list of row sums, where each index represents a row number,
+# and each list value represents a row sum.
 def sum_sheet_rows(df):
-	index = df.index
-	columns = df.columns
-	values = df.values
+    rows = df.index
+    
+    # https://railsware.com/blog/python-for-machine-learning-pandas-axis-explained/
+    # axis=1 produces a sum for each row, axis=0 produces a sum for each column
+    # axis aliases: axis=1 same as axis='columns', axis=0 same as axis='rows'
+    sheet_row_sums = df.sum(axis=1) 
+    
+    # for i in range(len(rows)):
+    #     row_sum = df.sum(axis=i)
+    #     sheet_row_sums.append(row_sum) 
+        
+# 	index = df.index
+# 	columns = df.columns
+# 	values = df.values
+# 
+# 	num_rows = len(index)
+# 	num_columns = len(columns)
+# 
+# 	row_sums = [0]*num_rows
+# 
+# 	for r in range(num_rows):
+# 		row_sum = 0
+# 		for c in range(num_columns):
+# 			cell = values[r][c]
+# 			#print(str(cell) + ' -- ' + str(type(cell)) )
+# 			
+# 			# check for numpy.float64 and float values (could be nan or number)
+# 			if type(cell) == np.float64 or type(cell) == float :
+# 				# check if cell is not a nan value
+# 				if not np.isnan(cell):
+# 					# add to row count
+# 					row_sum+=cell 
+# 			
+# 			# check for int values
+# 			elif type(cell) == int:
+# 				# add to row count
+# 				row_sum+=cell
+# 
+# 		row_sums[r] = float(row_sum)
+#
+# 	return row_sums
 
-	num_rows = len(index)
-	num_columns = len(columns)
-
-	row_sums = [0]*num_rows
-
-	for r in range(num_rows):
-		row_sum = 0
-		for c in range(num_columns):
-			cell = values[r][c]
-			#print(str(cell) + ' -- ' + str(type(cell)) )
-			
-			# check for numpy.float64 and float values (could be nan or number)
-			if type(cell) == np.float64 or type(cell) == float :
-				# check if cell is not a nan value
-				if not np.isnan(cell):
-					# add to row count
-					row_sum+=cell 
-			
-			# check for int values
-			elif type(cell) == int:
-				# add to row count
-				row_sum+=cell
-
-		row_sums[r] = float(row_sum)
-
-	return row_sums
+    return sheet_row_sums
 
 
 def combine_sums(max_rows, all_sums):
@@ -90,7 +104,7 @@ def combine_sums(max_rows, all_sums):
 	return row_counts
 
 
-# Find the sum of all rows in an excel workbook.
+# Find the sum of all rows of all sheets in an excel workbook.
 # Returns a list of row sums, where each index represents a row number,
 # and each list value represents a row sum.
 # Note: this doesn't include the first row of headers. (Q: Should it?)
