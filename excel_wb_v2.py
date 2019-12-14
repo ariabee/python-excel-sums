@@ -3,6 +3,8 @@
 # Find all excel workbooks,
 # Return a new csv file with each row being a sum of
 # all values in that row of all sheets of all workbooks
+# 
+# AriaRay Brown 11-21-19
 
 import pandas as pd
 from pandas import ExcelWriter
