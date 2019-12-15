@@ -4,7 +4,7 @@ This was an exercise to practice using Python with Excel. It was prompted by the
 
 **"Given a file directory, find all Excel workbooks. Return a new csv file with each row being a sum of: all values in that row, for all sheets, for all workbooks."**
 
-My goal was to practice using Python; explore the Excel-related capabilities of the python data analysis library, pandas; and learn more about how I could use python programming for data analysis.
+My goal was to practice using Python; explore the Excel-related capabilities of the python data analysis library, [pandas](https://pandas.pydata.org/); and learn more about how I could use python programming for data analysis.
 
 
 ## Contents
