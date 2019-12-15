@@ -1,6 +1,6 @@
 # Testing Python Programs with Excel
 
-This was an exercise to practice using Python with Excel. It was prompted by the [task](#Acknowledgements):
+This was an exercise to practice using Python with Excel. It was prompted by the [task](#acknowledgments):
 
 **"Given a file directory, find all Excel workbooks. Return a new csv file with each row being a sum of: all values in that row, for all sheets, for all workbooks."**
 
