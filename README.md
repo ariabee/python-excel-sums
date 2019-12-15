@@ -39,7 +39,7 @@ Python 3 installation is needed to run the python file locally.
 To run the program, simply download *excel_wb.py* or *excel_wb_v2.py* and save it to a folder containing Excel workbooks.
 
 Run the program through a terminal application (like Mac's Terminal). 
-In Terminal, navigate to the folder where the program is located. Then run the file.
+In Terminal, navigate to the folder where the program is located. Then run the file:
 
 ```
 python3 excel_wb.py
