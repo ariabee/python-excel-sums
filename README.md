@@ -8,7 +8,7 @@ My goal was to practice using Python; explore the Excel-related capabilities of 
 
 (A friend gave me the task.)
 
-### Contents
+## Contents
 
 The repository represents the file directory. The directory contains:
 
@@ -17,7 +17,7 @@ The repository represents the file directory. The directory contains:
 * excel_wb_v2.py - the program version 2 that implements more pandas internal functions
 * row_sums.csv - the csv file created by the program
 
-### Progress in the Works
+## Progress in the Works
 
 * **Resolve sum_sheet_rows(df) discrepancy**: 
 Further investigation/testing is needed to see why the pandas sum function used in excel_wb_v2.py returns different results from the custom sum function used in excel_wb.py.
@@ -25,16 +25,15 @@ Further investigation/testing is needed to see why the pandas sum function used 
 
 * **Clean up with functional programming**:
 It would be helpful to rework some of the functions as "pure functions" so that it's clear what they are taking in and what they are returning. This could also mean removing the global variable so that the program can be read unambiguously from the main function.
+I recently was introduced (or maybe reintroduced?) to functional programming from this video: ["Learning Functional Programming with JavaScript" by Anjana Sofia Vakil (github.com/vakila/)](https://www.youtube.com/watch?v=e-5obm1G_FY)
 
-I recently was introduced (or maybe reintroduced?) to functional programming from this video: ["Learning Functional Programming with JavaScript" by Anjana Sofia Vakil [(/vakila)](github.com/vakila/)](https://www.youtube.com/watch?v=e-5obm1G_FY)
 
-
-* **Add further documentation. Clean up script comments and output text**
+* **Add further documentation. Clean up script comments and output text.**
 
 * **Add the ability for users to enter the desired file directory into the console**:
 Currently, the program is hardcoded to search the file directory containing the program itself.
 
-### Running Requirements
+## Running Requirements
 
 Python 3 installation is needed to run the python file locally.
 
@@ -47,6 +46,6 @@ In Terminal, navigate to the folder where the program is located. Then run the f
 python3 excel_wb.py
 ```
 
-### Acknowledgments
+## Acknowledgments
 
 * Shout-out to Rohit for giving me "homework" and sending me educational YouTube videos. 
