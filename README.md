@@ -47,4 +47,4 @@ python3 excel_wb.py
 
 ## Acknowledgments
 
-* Shout-out to Rohit for giving me "homework" and sending me educational YouTube videos. 
+* Shout-out to Rohit for giving me this "homework" and sending me educational YouTube videos. 
